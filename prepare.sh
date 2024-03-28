@@ -1,6 +1,14 @@
 #!/bin/bash
 
-repo=AIAS
+if [ -z "$1" ]; then
+    echo "Error: Missing required parameter."
+    echo "Usage: $0 <path_to_git_repo>"
+    exit 1
+fi
+
+echo "Prepare to generate each commit file tree of git repo: $1"
+
+repo=$1
 
 rm -f *.txt
 
